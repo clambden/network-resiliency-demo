@@ -1,0 +1,11 @@
+version: "3"
+services:
+  ubuntu_iptools:
+    build: .
+    privileged: true
+  petstore:
+    image: openapitools/openapi-petstore
+    environment:
+      - OPENAPI_BASE_PATH=/v3
+    ports:
+      - "80:8080"
